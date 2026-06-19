@@ -19,6 +19,8 @@ bot = commands.Bot(command_prefix=os.getenv("PREFIX"), intents=discord.Intents.a
 async def on_ready():
     print(f"{bot.user} has woke up from the multibot grave!")
 
+# The specified commands for the bot
+
 @bot.command(name="ping",description="Used to check the bot's ping to Discord")
 async def ping(ctx):
     await ctx.send(f"Ping: {int(round(bot.latency*1000,0))}ms")
