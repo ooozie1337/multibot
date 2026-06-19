@@ -8,16 +8,33 @@ from discord.ext import commands
 # Loads the .env file and the data inside of it
 
 load_dotenv(".env")
-botToken = os.getenv('TOKEN')
+botToken = os.getenv("TOKEN")
 botPrefix = os.getenv("PREFIX")
+botStatusType = os.getenv("STATUS_TYPE").lower()
+botStatusName = os.getenv("STATUS_NAME")
+botStatusURL = os.getenv("STATUS_URL")
 bot = commands.Bot(command_prefix=botPrefix,intents=discord.Intents.all())
+
+# Function used for the custom Bot status
+async def setStatus(statusType, statusName, statusURL):
+    if statusType == "streaming":
+        await bot.change_presence(activity=discord.Streaming(name=f"Streaming {statusName}", url=statusURL))
+    elif statusType == "listening":
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f"Listening to {statusName}"))
+    elif statusType == "playing":
+        await bot.change_presence(activity=discord.Game(name=f"Playing {statusName}"))
+    elif statusType == "watching":
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"Watching {statusName}"))
+    else:
+        print("[!] The status type entry you entered is incorrect or unavailable.")
 
 # Using on_ready() so if the bot runs the user knows its running
 
 bot = commands.Bot(command_prefix=os.getenv("PREFIX"), intents=discord.Intents.all())
 @bot.event
 async def on_ready():
-    print(f"{bot.user} has woke up from the multibot grave!")
+    await setStatus(botStatusType,botStatusName,botStatusURL)
+    print(f"[!] {bot.user} has woke up from the multibot grave!")
 
 # The specified commands for the bot
 
