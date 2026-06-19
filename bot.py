@@ -4,7 +4,6 @@ import random
 from discord.ext import commands
 load_dotenv(".env")
 botToken = os.getenv('TOKEN')
-dlPath = os.getenv('PATH')
 bot = commands.Bot(os.getenv("PREFIX"),intents=discord.Intents.all())
 @bot.event
 async def on_ready():
