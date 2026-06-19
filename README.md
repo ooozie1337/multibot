@@ -1,10 +1,23 @@
 # MultiBot
-An all in one Discord bot that has multiple features like WHOIS, AI generation of images, Encoding/Decoding and API-related features and commands. (they're gonna be added later the bot is still work in progress lol)
-# FAQ (Frequently Asked Questions)
-Q: How do I set this up?
-<p>A: To set up MultiBot you need to do these following steps.</p>
-<p>First, Use git clone to clone this repo or download the ZIP file.</p>
-<p>Secondly, when you download it rename the .env.example file to .env</p>
-<p>Third, open it in vim/nano or whatever editor you use and put your own bot token and command prefix.
-<p>Q: What packages do I need for this to work?</p>
-<p>A: You need the following: `python-dotenv pybalt pyyaml aiofiles discord.py`.</p>
+An all in one Discord bot that has multiple features like WHOIS look-up, AI generation, encoding/decoding in Base64, hex and others, and API-related commands (like displaying a Steam profile or getting a user's information by their Discord ID). (they're gonna be added very soon! i recently started making this lol)
+## FAQ
+### Q: How do I set this up?
+**A:**
+1. Clone the repository using `git` or download the ZIP from this repo.
+2. Rename `.env.example` to `.env`.
+3. Open `.env` in any editor and put your bot token and command prefix.
+4. Install the required packages.
+5. Run the bot and have fun!
+### Q: What packages do I need?
+**A: Here are the following packages you need:**
+```
+python-dotenv
+pybalt
+pyyaml
+aiofiles
+discord.py
+```
+Or install them with PIP like this:
+```bash
+pip install python-dotenv pybalt pyyaml aiofiles discord.py
+```
