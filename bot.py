@@ -51,8 +51,8 @@ async def download(ctx, url):
     path = await pybalt.download(url, videoQuality='480')
     if "instagram" in url: await ctx.send("Your Instagram video has been downloaded!",file=discord.File(path))
     elif "youtube" in url: await ctx.send("Your YouTube video has been downloaded!",file=discord.File(path))
-    elif "x" or "twitter" in url: await ctx.send("Your Twitter video has been downloaded!",file=discord.File(path))
-    elif "tiktok" in url: await ctx.send("Your T witter video has been downloaded!",file=discord.File(path))
+    elif "x.com" in url or "twitter" in url: await ctx.send("Your Twitter video has been downloaded!",file=discord.File(path))
+    elif "tiktok" in url: await ctx.send("Your TikTok video has been downloaded!",file=discord.File(path))
     if os.name == "nt": os.system(f"del {path}") 
     else: os.system(f"rm {path}")
 
