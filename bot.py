@@ -65,7 +65,7 @@ async def download(ctx, url):
                 if dlPath and os.path.exists(dlPath):
                     os.remove(dlPath)
             return
-    await ctx.send(f"Downloading files from these URLs `{' '.join(pybaltURLs)}` isn't implemented yet!")
+    await ctx.send(f"Downloading files that aren't from these URLs `{' '.join(pybaltURLs)}` isn't implemented yet!")
     # DOWNLOADS FOR UNSUPPORTED URLS WILL BE IMPLEMENTED VERY SOON!!!
 
 @bot.command(name="encodeb64",description=f"Encodes a string in Base64")
